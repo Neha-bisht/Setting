@@ -8,29 +8,84 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Settings-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Setting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search" showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzq-Q7-QJm">
+                                <rect key="frame" x="0.0" y="147" width="414" height="56"/>
+                                <color key="barTintColor" systemColor="systemGray5Color"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8D2-Qa-Ig1">
+                                <rect key="frame" x="0.0" y="207" width="414" height="673"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="3" indentationWidth="0.0" reuseIdentifier="cell" textLabel="020-6q-QfI" detailTextLabel="kPB-yF-SMq" rowHeight="74" style="IBUITableViewCellStyleSubtitle" id="iGE-ue-ybW">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="74"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iGE-ue-ybW" id="Li9-03-n8u">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="74"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="020-6q-QfI">
+                                                    <rect key="frame" x="20" y="17" width="33" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kPB-yF-SMq">
+                                                    <rect key="frame" x="20" y="40.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="XcD-UM-XZ7"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xAt-aZ-xKH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uzq-Q7-QJm" secondAttribute="trailing" id="9Pb-Mz-wx5"/>
+                            <constraint firstItem="Uzq-Q7-QJm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="j6T-Ag-9o0"/>
+                            <constraint firstItem="Uzq-Q7-QJm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ry9-kT-jsv"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="43a-3R-we9"/>
+                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="43a-3R-we9"/>
+                    <connections>
+                        <outlet property="searchBar1" destination="Uzq-Q7-QJm" id="P83-xv-J3G"/>
+                        <outlet property="tableView1" destination="8D2-Qa-Ig1" id="z7R-Em-BRS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031.8840579710145" y="101.78571428571428"/>
+            <point key="canvasLocation" x="909" y="102"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3uX-O2-Erz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tBs-kS-L6y" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pnm-Ft-MOb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="pnm-Ft-MOb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -46,6 +101,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
